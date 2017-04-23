@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="app/Scripts/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body ng-app="SSOeModal">
+    <div ng-controller="ques1">
+        Enter Text:    <textarea name="Text1" cols="40" rows="5" ng-model="textArea"></textarea>
+        <div>
+            <input type="button" id="btnCheck" value="Click for text" ng-click="SplitWord();" />
+        </div>
+        <div>
+            Rev Text : {{textAreaRev}}
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div ng-controller="ques2">
+        <div>
+            Enter Number: <input type="text" name="inp" ng-model="inp">
+        </div>
+        <div>
+            <input type="button" id="btnCheck" value="Check" ng-click="CheckValids();" />
+        </div>
+        <div>
+            Possible Ways: {{value}}
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div ng-controller="ques3">
+        <div>
+            From Month:
+            <select ng-model="FromMonth">
+                <option ng-repeat="m in months"
+                        value="{{m.value}}">
+                    {{m.name}}
+                </option>
+            </select>
+            From Year:
+            <select ng-model="FromYear">
+                <option ng-repeat="m in years"
+                        value="{{m.value}}">
+                    {{m.name}}
+                </option>
+            </select>
+        </div>
+        <div>
+            To Month:
+            <select ng-model="ToMonth">
+                <option ng-repeat="m in months"
+                        value="{{m.value}}">
+                    {{m.name}}
+                </option>
+            </select>
+            To Year:
+            <select ng-model="ToYears">
+                <option ng-repeat="m in years"
+                        value="{{m.value}}">
+                    {{m.name}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <input type="button" id="btnCheck" value="Check" ng-click="CheckValues();" />
+        </div>
+        <div ng-show="YrMonth.length > 0">
+            <div ng-repeat="yrmonth in YrMonth">
+                Year{{yrmonth.year}} Month {{yrmonth.month}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
